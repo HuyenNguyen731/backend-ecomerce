@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1c63571-b30c-4f63-a2df-9f0f39565e22" name="Changes" comment="" />
+    <list default="true" id="c1c63571-b30c-4f63-a2df-9f0f39565e22" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/controllers/ProductController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/ProductService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/authMiddware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/authMiddware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ProductModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ProductModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/ProductRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ProductRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/UserRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/UserRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,17 +28,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Data/DoAn/ecommerce-backend/src/routes",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.17.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.17.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Data/DoAn&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Data\DoAn\ecommerce-backend\src\routes" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Data\DoAn\ecommerce-backend\src" />
     </key>
@@ -61,7 +75,9 @@
       <updated>1708938665137</updated>
       <workItem from="1708938667292" duration="942000" />
       <workItem from="1708999357259" duration="18356000" />
-      <workItem from="1709039793318" duration="3376000" />
+      <workItem from="1709039793318" duration="7853000" />
+      <workItem from="1709085925866" duration="4982000" />
+      <workItem from="1709103260655" duration="10000" />
     </task>
     <servers />
   </component>
