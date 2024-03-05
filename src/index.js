@@ -4,6 +4,8 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const routes = require("./routes")
 const bodyParser = require("body-parser")
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 //load environment variables from file .env
 dotenv.config();
@@ -13,7 +15,9 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 //use body-parser middleware to parse request body as JSON
+app.use(cors())
 app.use(bodyParser.json())
+app.use(cookieParser())
 
 routes(app);
 
