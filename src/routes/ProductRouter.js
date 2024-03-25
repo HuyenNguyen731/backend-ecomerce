@@ -1,6 +1,6 @@
 const express = require("express");
 const ProductController = require("../controllers/ProductController");
-const { authMiddleWare } = require("../middleware/authMiddware");
+const { authMiddleWare } = require("../middleware/authMiddleware");
 const router = express.Router()
 
 router.post('/create', ProductController.createProduct)

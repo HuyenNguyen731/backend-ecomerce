@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1c63571-b30c-4f63-a2df-9f0f39565e22" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/controllers/OrderController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/OrderRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/OrderService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ProductController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/authMiddware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/authMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/ProductRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ProductRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ProductService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ProductService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/UserRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/UserRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,19 +28,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.17.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.17.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Data/DoAn/ecommerce-frontend&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "18.17.0",
+    "javascript.nodejs.core.library.typings.version": "18.17.0",
+    "last_opened_file_path": "D:/Data/DoAn/ecommerce-frontend",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Data\DoAn\ecommerce-backend\src\routes" />
@@ -92,7 +96,17 @@
       <workItem from="1710377582558" duration="1092000" />
       <workItem from="1710513189063" duration="2177000" />
       <workItem from="1710594638447" duration="1295000" />
-      <workItem from="1710642627781" duration="1948000" />
+      <workItem from="1710642627781" duration="3165000" />
+      <workItem from="1710858169759" duration="2861000" />
+      <workItem from="1710941941921" duration="1587000" />
+      <workItem from="1710992042940" duration="5163000" />
+      <workItem from="1711029757811" duration="4421000" />
+      <workItem from="1711072562888" duration="197000" />
+      <workItem from="1711072935986" duration="1089000" />
+      <workItem from="1711116855882" duration="1670000" />
+      <workItem from="1711119807992" duration="412000" />
+      <workItem from="1711332939982" duration="331000" />
+      <workItem from="1711374937773" duration="4405000" />
     </task>
     <servers />
   </component>
