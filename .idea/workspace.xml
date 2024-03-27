@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1c63571-b30c-4f63-a2df-9f0f39565e22" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controllers/OrderController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/OrderRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/OrderService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware/authMiddware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/authMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/ProductRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ProductRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/UserRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/UserRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/OrderController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/OrderController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/OrderRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/OrderRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/OrderService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/OrderService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +31,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "18.17.0",
     "javascript.nodejs.core.library.typings.version": "18.17.0",
-    "last_opened_file_path": "D:/Data/DoAn/ecommerce-frontend",
+    "last_opened_file_path": "D:/Data/DoAn/ecommerce-backend",
     "nodejs_package_manager_path": "npm",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
@@ -106,7 +102,11 @@
       <workItem from="1711116855882" duration="1670000" />
       <workItem from="1711119807992" duration="412000" />
       <workItem from="1711332939982" duration="331000" />
-      <workItem from="1711374937773" duration="4405000" />
+      <workItem from="1711374937773" duration="5034000" />
+      <workItem from="1711419804765" duration="81000" />
+      <workItem from="1711447211576" duration="610000" />
+      <workItem from="1711459537342" duration="3000000" />
+      <workItem from="1711504059808" duration="2360000" />
     </task>
     <servers />
   </component>
