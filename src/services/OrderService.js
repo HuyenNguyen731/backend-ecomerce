@@ -4,7 +4,7 @@ const EmailService = require("./EmailService");
 
 const createOrder = (newOrder) => {
     return new Promise(async (resolve, reject) => {
-        const { orderItems, paymentMethod, itemsPrice, shippingPrice, totalPrice, fullName, address, city, phone, user, isPaid, paidAt, email } = newOrder;
+        const { orderItems, paymentMethod, itemsPrice, shippingPrice, totalPrice, fullName, address, city, phone, user, isPaid, paidAt, email, status } = newOrder;
         try {
             const promises = orderItems.map(async (order) => {
                 const productData = await Product.findOneAndUpdate(
@@ -57,7 +57,8 @@ const createOrder = (newOrder) => {
                     totalPrice,
                     user,
                     isPaid,
-                    paidAt
+                    paidAt,
+                    status
                 });
                 if (createdOrder) {
                     await EmailService.sendEmailCreateOrder(email, orderItems)
@@ -124,54 +125,64 @@ const getOrderDetails = (id) => {
 const cancelOrderDetails = (id, data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let order = []
-            const promises = data.map(async (order) => {
-                const productData = await Product.findOneAndUpdate(
-                    {
-                        _id: order.product,
-                        sold: {$gte: order.amount}
-                    },
-                    {$inc: {
-                            countInStock: +order.amount,
-                            sold: -order.amount
-                        }},
-                    {new: true}
-                )
-                if(productData) {
-                    order = await Order.findByIdAndDelete(id)
-                    if (order === null) {
-                        resolve({
-                            status: 'ERR',
-                            message: 'The order is not defined'
-                        })
-                    }
-                } else {
-                    return{
-                        status: 'OK',
-                        message: 'ERR',
-                        id: order.product
-                    }
+            let order;
+            try {
+                order = await Order.findByIdAndUpdate(
+                    id,
+                    { status: "cancel" },
+                    { new: true }
+                );
+                if (!order) {
+                    throw new Error('The order is not defined');
                 }
-            })
-            const results = await Promise.all(promises)
-            const newData = results && results[0] && results[0].id
-
-            if(newData) {
-                resolve({
-                    status: 'ERR',
-                    message: `San pham voi id: ${newData} khong ton tai`
-                })
+            } catch (error) {
+                reject({ status: 'ERR', message: 'An error occurred while updating the order' });
             }
-            resolve({
-                status: 'OK',
-                message: 'success',
-                data: order
-            })
-        } catch (e) {
-            reject(e)
+
+            const promises = data.map(async (orderItem) => {
+                try {
+                    const productData = await Product.findOneAndUpdate(
+                        {
+                            _id: orderItem.product,
+                            sold: { $gte: orderItem.amount }
+                        },
+                        {
+                            $inc: {
+                                countInStock: +orderItem.amount,
+                                sold: -orderItem.amount
+                            }
+                        },
+                        { new: true }
+                    );
+                    if (!productData) {
+                        throw new Error(`Product with ID: ${orderItem.product} is not available`);
+                    }
+                } catch (error) {
+                    return {
+                        status: 'ERR',
+                        message: error.message
+                    };
+                }
+            });
+
+            const results = await Promise.all(promises);
+            const newData = results.find(item => item && item.status === 'ERR');
+
+            if (newData) {
+                resolve(newData);
+            } else {
+                resolve({
+                    status: 'OK',
+                    message: 'Order canceled successfully',
+                    data: order
+                });
+            }
+        } catch (error) {
+            reject(error);
         }
-    })
-}
+    });
+};
+
 
 const getAllOrder = () => {
     return new Promise(async (resolve, reject) => {
