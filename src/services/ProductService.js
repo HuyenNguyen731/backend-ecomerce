@@ -127,11 +127,17 @@ const getAllProduct = (limit, page, sort, filter) => {
     return new Promise(async (resolve, reject) => {
         try {
             let totalProduct = await Product.countDocuments();
-            let allProduct = []
+            let allProduct = [];
+            let allObjectFilter;
             if (filter) {
-                const label = filter[0];
-                const allObjectFilter = await Product.find({ [label]: { '$regex': filter[1] } }).limit(limit).skip(page * limit).sort({createdAt: -1, updatedAt: -1})
-                totalProduct = await Product.countDocuments({ [label]: { '$regex': filter[1] } });
+                const label = filter[0]; 
+                if(label === "type") {
+                    allObjectFilter = await Product.find({ [label]: filter[1] }).limit(limit).skip(page * limit).sort({createdAt: -1, updatedAt: -1})
+                    totalProduct = await Product.countDocuments({ [label]: filter[1] });
+                } else {
+                    allObjectFilter = await Product.find({ [label]: { '$regex': filter[1] } }).limit(limit).skip(page * limit).sort({createdAt: -1, updatedAt: -1})
+                    totalProduct = await Product.countDocuments({ [label]: { '$regex': filter[1] } });
+                }
                 resolve({
                     status: 'OK',
                     message: 'Success',
