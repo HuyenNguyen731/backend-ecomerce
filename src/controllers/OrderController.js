@@ -107,7 +107,6 @@ const updateStatusOrder = async (req, res) => {
   try {
     const orderId = req.params.id;
     const status = req.query.status;
-    console.log(orderId, status);
     if (!orderId || !status) {
       return res.status(200).json({
         status: "ERR",
