@@ -122,6 +122,37 @@ const getOrderDetails = (id) => {
     })
 }
 
+const updateStatusOrder = (id, status) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (!["pending", "in-progress", "cancel", "completed", "refund"].includes(status)) {
+                throw new Error("Invalid status");
+            }
+
+            const order = await Order.findByIdAndUpdate(
+                id,
+                { status: status },
+                { new: true }
+            );
+        
+            if (order === null) {
+                resolve({
+                    status: 'ERR',
+                    message: 'The order is not defined'
+                })
+            }
+
+            resolve({
+                status: 'OK',
+                message: 'SUCCESS',
+                data: order
+            })
+        } catch (e) {
+            reject(e)
+        }
+    })
+}
+
 const cancelOrderDetails = (id, data) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -204,7 +235,8 @@ module.exports = {
     getAllOrderDetails,
     getOrderDetails,
     cancelOrderDetails,
-    getAllOrder
+    getAllOrder,
+    updateStatusOrder
 }
 
 
