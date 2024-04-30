@@ -6,8 +6,12 @@ const {
   authUserMiddleWare,
 } = require("../middleware/authMiddleware");
 
-router.post("/create-review", authUserMiddleWare, reviewController.createReview);
-router.get("/get-all-review", authUserMiddleWare, reviewController.getAllReview);
-router.delete("/delete/:id", authMiddleWare, reviewController.deleteReview);
+router.post(
+  "/create-review",
+  authUserMiddleWare,
+  reviewController.createReview
+);
+router.get("/get-all-review", reviewController.getAllReview);
+router.put("/delete/:id", reviewController.deleteReview);
 
 module.exports = router;

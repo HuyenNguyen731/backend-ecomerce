@@ -32,13 +32,14 @@ const getAllReview = async (req, res) => {
 const deleteReview = async (req, res) => {
   try {
     const reviewId = req.params.id;
+    const { hidden } = req.body;
     if (!reviewId) {
       return res.status(200).json({
         status: "ERR",
         message: "id review is required",
       });
     }
-    const response = await ReviewService.deleteReview(reviewId);
+    const response = await ReviewService.deleteReview(reviewId, hidden);
     return res.status(200).json(response);
   } catch (e) {
     return res.status(404).json({

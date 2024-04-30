@@ -5,7 +5,7 @@ const Product = require("../models/ProductModel");
 
 const createReview = (newReview) => {
   return new Promise(async (resolve, reject) => {
-    const { rate, order_id, product_id, user_id } = newReview;
+    const { rate, note, order_id, product_id, user_id } = newReview;
     try {
       // Tìm kiếm đơn hàng
       const order = await Order.findOne({ _id: order_id });
@@ -29,7 +29,7 @@ const createReview = (newReview) => {
 
       // Kiểm tra xem product_id có trong danh sách sản phẩm của đơn hàng không
       const productExists = order.orderItems.some(
-        (item) => item.product._id.toString() === product_id
+        (item) => item.product.toString() === product_id
       );
       if (!productExists) {
         resolve({
@@ -42,6 +42,7 @@ const createReview = (newReview) => {
       // Tạo đánh giá nếu tất cả điều kiện đều đúng
       const createdReview = await Review.create({
         rate,
+        note,
         order_id,
         product_id,
         user_id,
@@ -60,7 +61,7 @@ const createReview = (newReview) => {
   });
 };
 
-const deleteReview = (id) => {
+const deleteReview = (id, hidden) => {
   return new Promise(async (resolve, reject) => {
     try {
       const checkReview = await Review.findOne({
@@ -73,10 +74,10 @@ const deleteReview = (id) => {
         });
       }
 
-      await Review.findByIdAndDelete(id);
+      await Review.findByIdAndUpdate(id, { delete: hidden });
       resolve({
         status: "OK",
-        message: "Delete Review success",
+        message: "Marked review as deleted",
       });
     } catch (e) {
       reject(e);
@@ -87,10 +88,10 @@ const deleteReview = (id) => {
 const getAllReview = () => {
   return new Promise(async (resolve, reject) => {
     try {
-      const allReview = await Review.find().sort({
-        createdAt: -1,
-        updatedAt: -1,
-      });
+      const allReview = await Review.find()
+        .sort({ createdAt: -1, updatedAt: -1 })
+        .populate("product_id");
+
       resolve({
         status: "OK",
         message: "Success",
