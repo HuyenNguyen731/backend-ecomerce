@@ -18,7 +18,6 @@ const createReview = (newReview) => {
         return;
       }
 
-      // Kiểm tra xem user_id có khớp với user của đơn hàng không
       if (order.user.toString() !== user_id) {
         resolve({
           status: "ERR",
@@ -27,7 +26,6 @@ const createReview = (newReview) => {
         return;
       }
 
-      // Kiểm tra xem product_id có trong danh sách sản phẩm của đơn hàng không
       const productExists = order.orderItems.some(
         (item) => item.product.toString() === product_id
       );
@@ -103,8 +101,31 @@ const getAllReview = () => {
   });
 };
 
+const getReviewByIdProduct = (productId) => {
+  console.log(productId, "productId");
+  return new Promise(async (resolve, reject) => {
+    try {
+      const allReview = await Review.find({ product_id: productId })
+        .sort({
+          createdAt: -1,
+          updatedAt: -1,
+        })
+        .populate("user_id");
+
+      resolve({
+        status: "OK",
+        message: "Success",
+        data: allReview,
+      });
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   createReview,
   deleteReview,
   getAllReview,
+  getReviewByIdProduct,
 };

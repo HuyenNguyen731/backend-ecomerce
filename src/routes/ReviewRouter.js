@@ -8,10 +8,10 @@ const {
 
 router.post(
   "/create-review",
-  authUserMiddleWare,
   reviewController.createReview
 );
 router.get("/get-all-review", reviewController.getAllReview);
+router.get("/get-review-by-id/:id", reviewController.getReviewByIdProduct);
 router.put("/delete/:id", reviewController.deleteReview);
 
 module.exports = router;

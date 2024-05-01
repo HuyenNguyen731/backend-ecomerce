@@ -29,6 +29,24 @@ const getAllReview = async (req, res) => {
   }
 };
 
+const getReviewByIdProduct = async (req, res) => {
+  try {
+    const productId = req.params.id;
+    if (!productId) {
+      return res.status(200).json({
+        status: "ERR",
+        message: "id product is required",
+      });
+    }
+    const response = await ReviewService.getReviewByIdProduct(productId);
+    return res.status(200).json(response);
+  } catch (e) {
+    return res.status(404).json({
+      message: e,
+    });
+  }
+};
+
 const deleteReview = async (req, res) => {
   try {
     const reviewId = req.params.id;
@@ -52,4 +70,5 @@ module.exports = {
   createReview,
   getAllReview,
   deleteReview,
+  getReviewByIdProduct,
 };
