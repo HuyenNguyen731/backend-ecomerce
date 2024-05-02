@@ -5,6 +5,7 @@ const PaymentRouter = require("./PaymentRouter");
 const RoleRouter = require("./RoleRouter");
 const CategoryRouter = require("./CategoryRouter");
 const ReviewRouter = require("./ReviewRouter");
+const FeedbackRouter = require("./FeedbackRouter");
 
 const routes = (app) => {
   //ánh xạ các route từ UserRouter tới endpoint /api/user
@@ -15,6 +16,7 @@ const routes = (app) => {
   app.use("/api/order", OrderRouter);
   app.use("/api/payment", PaymentRouter);
   app.use("/api/review", ReviewRouter);
+  app.use("/api/feedback", FeedbackRouter);
 };
 
 module.exports = routes;
