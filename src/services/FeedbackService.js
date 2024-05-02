@@ -2,7 +2,6 @@ const Feedback = require("../models/FeedbackModel");
 
 const createFeedback = (data) => {
   return new Promise(async (resolve, reject) => {
-    console.log("service");
     const { name, email, phone, note } = data;
     try {
       const createdFeedback = await Feedback.create({
