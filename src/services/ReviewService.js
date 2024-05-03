@@ -102,7 +102,6 @@ const getAllReview = () => {
 };
 
 const getReviewByIdProduct = (productId) => {
-  console.log(productId, "productId");
   return new Promise(async (resolve, reject) => {
     try {
       const allReview = await Review.find({ product_id: productId })
